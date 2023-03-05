@@ -6,24 +6,25 @@ class NavBarDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber,
-      child: Row(
-        children: [
-          TextButton(
-            onPressed: () => context.go("/work"),
-            child: const Text("Work"),
-          ),
-          TextButton(
-            onPressed: () => context.go("/about"),
-            child: const Text("About"),
-          ),
-          TextButton(
-            onPressed: () => context.go("/contact"),
-            child: const Text("Contact"),
-          ),
-        ],
+    return AppBar(
+      leading: IconButton(
+        onPressed: () => context.go("/"),
+        icon: const Icon(Icons.home_rounded),
       ),
+      actions: [
+        TextButton(
+          onPressed: () => context.go("/work"),
+          child: const Text("Work"),
+        ),
+        TextButton(
+          onPressed: () => context.go("/about"),
+          child: const Text("About"),
+        ),
+        TextButton(
+          onPressed: () => context.go("/contact"),
+          child: const Text("Contact"),
+        ),
+      ],
     );
   }
 }
